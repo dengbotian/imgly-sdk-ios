@@ -97,11 +97,11 @@ public class IMGLYMainEditorViewController: IMGLYEditorViewController {
                 image: UIImage(named: "icon_option_saturation", inBundle: bundle, compatibleWithTraitCollection: nil),
                 handler: { [unowned self] in self.subEditorButtonPressed(.Saturation) }))
         
-        handlers.append(
-            IMGLYActionButton(
-                title: NSLocalizedString("main-editor.button.text", tableName: nil, bundle: bundle, value: "", comment: ""),
-                image: UIImage(named: "icon_option_text", inBundle: bundle, compatibleWithTraitCollection: nil),
-                handler: { [unowned self] in self.subEditorButtonPressed(.Text) }))
+//        handlers.append(
+//            IMGLYActionButton(
+//                title: NSLocalizedString("main-editor.button.text", tableName: nil, bundle: bundle, value: "", comment: ""),
+//                image: UIImage(named: "icon_option_text", inBundle: bundle, compatibleWithTraitCollection: nil),
+//                handler: { [unowned self] in self.subEditorButtonPressed(.Text) }))
         
         return handlers
         }()
