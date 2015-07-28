@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "glasses_shutter_green@2x_thumbnail.png"
+      "filename" : "glasses_shutter_green_thumbnail@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "glasses_shutter_green@3x_thumbnail.png"
+      "filename" : "glasses_shutter_green_thumbnail@3x.png"
     }
   ],
   "info" : {

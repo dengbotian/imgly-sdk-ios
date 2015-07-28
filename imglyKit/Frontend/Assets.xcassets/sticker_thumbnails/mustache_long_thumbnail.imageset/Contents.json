@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "mustache_long@2x_thumbnail.png"
+      "filename" : "mustache_long_thumbnail@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "mustache_long@3x_thumbnail.png"
+      "filename" : "mustache_long_thumbnail@3x.png"
     }
   ],
   "info" : {

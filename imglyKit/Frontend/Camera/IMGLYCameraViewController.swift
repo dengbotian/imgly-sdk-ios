@@ -73,12 +73,22 @@ public class IMGLYCameraViewController: UIViewController {
         return view
         }()
     
+    public private(set) lazy var closeButton: UIButton = {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let button = UIButton()
+        button.setTranslatesAutoresizingMaskIntoConstraints(false)
+        button.setImage(UIImage(named: "icon_close", inBundle: bundle, compatibleWithTraitCollection: nil), forState: .Normal)
+        button.contentHorizontalAlignment = .Left
+        button.addTarget(self, action: "closeCamera", forControlEvents: .TouchUpInside)
+        return button
+        }()
+    
     public private(set) lazy var flashButton: UIButton = {
         let bundle = NSBundle(forClass: self.dynamicType)
         let button = UIButton()
         button.setTranslatesAutoresizingMaskIntoConstraints(false)
         button.setImage(UIImage(named: "flash_auto", inBundle: bundle, compatibleWithTraitCollection: nil), forState: .Normal)
-        button.contentHorizontalAlignment = .Left
+        button.contentHorizontalAlignment = .Right
         button.addTarget(self, action: "changeFlash:", forControlEvents: .TouchUpInside)
         button.hidden = true
         return button
@@ -319,6 +329,7 @@ public class IMGLYCameraViewController: UIViewController {
         filterSelectionController.didMoveToParentViewController(self)
         view.addSubview(filterSelectionController.view)
         
+        topControlsView.addSubview(closeButton)
         topControlsView.addSubview(flashButton)
         topControlsView.addSubview(switchCameraButton)
         
@@ -341,6 +352,7 @@ public class IMGLYCameraViewController: UIViewController {
             "cameraPreviewContainer" : cameraPreviewContainer,
             "bottomControlsView" : bottomControlsView,
             "filterSelectionView" : filterSelectionController.view,
+            "closeButton": closeButton,
             "flashButton" : flashButton,
             "switchCameraButton" : switchCameraButton,
             "cameraRollButton" : cameraRollButton,
@@ -385,7 +397,8 @@ public class IMGLYCameraViewController: UIViewController {
     }
     
     private func configureTopControlsConstraintsWithMetrics(metrics: [NSObject : NSNumber], views: [NSObject : AnyObject]) {
-        topControlsView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-(==topControlMargin)-[flashButton(>=topControlMinWidth)]-(>=topControlMargin)-[switchCameraButton(>=topControlMinWidth)]-(==topControlMargin)-|", options: nil, metrics: metrics, views: views))
+        topControlsView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-(==topControlMargin)-[closeButton(>=topControlMinWidth)]-(>=topControlMargin)-[flashButton(>=topControlMinWidth)]-(==topControlMargin)-[switchCameraButton(>=topControlMinWidth)]-(==topControlMargin)-|", options: nil, metrics: metrics, views: views))
+        topControlsView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[closeButton]|", options: nil, metrics: nil, views: views))
         topControlsView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[flashButton]|", options: nil, metrics: nil, views: views))
         topControlsView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[switchCameraButton]|", options: nil, metrics: nil, views: views))
     }
@@ -658,6 +671,10 @@ public class IMGLYCameraViewController: UIViewController {
         }
     }
     
+    public func closeCamera() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     public func changeFlash(sender: UIButton?) {
         switch(currentRecordingMode) {
         case .Photo:
@@ -750,7 +767,7 @@ public class IMGLYCameraViewController: UIViewController {
     
     // MARK: - Completion
     
-    private func editorCompletionBlock(result: IMGLYEditorResult, image: UIImage?) {
+    public func editorCompletionBlock(result: IMGLYEditorResult, image: UIImage?) {
         if let image = image where result == .Done {
             UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
         }

@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "hat_sherrif@2x_thumbnail.png"
+      "filename" : "hat_sherrif_thumbnail@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "hat_sherrif@3x_thumbnail.png"
+      "filename" : "hat_sherrif_thumbnail@3x.png"
     }
   ],
   "info" : {

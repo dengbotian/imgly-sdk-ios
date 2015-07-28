@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "pipe@2x_thumbnail.png"
+      "filename" : "pipe_thumbnail@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "pipe@3x_thumbnail.png"
+      "filename" : "pipe_thumbnail@3x.png"
     }
   ],
   "info" : {

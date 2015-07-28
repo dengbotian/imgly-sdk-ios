@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "icon_empty_camera_roll2x.png"
+      "filename" : "icon_empty_camera_roll@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "icon_empty_camera_roll3x.png"
+      "filename" : "icon_empty_camera_roll@3x.png"
     }
   ],
   "info" : {

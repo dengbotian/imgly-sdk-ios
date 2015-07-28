@@ -8,12 +8,12 @@
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "heart@2x_thumbnail.png"
+      "filename" : "heart_thumbnail@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "heart@3x_thumbnail.png"
+      "filename" : "heart_thumbnail@3x.png"
     }
   ],
   "info" : {

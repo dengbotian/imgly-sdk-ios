@@ -2,18 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "LensAperture_ShapeLayer_00001.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "LensAperture_ShapeLayer_00001@2x.png"
+      "filename" : "icon_close@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "LensAperture_ShapeLayer_00001@3x.png"
+      "filename" : "icon_close@3x.png"
     }
   ],
   "info" : {
